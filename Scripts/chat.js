@@ -39,6 +39,7 @@ class Chatroom {
     this.username = username;
   }
 
+
   updateRoom(room) {
     this.room = room;
     console.log('room updated');
@@ -48,20 +49,5 @@ class Chatroom {
   }
 }
 
-const chatroom = new Chatroom('gaming', 'Ngalla');
-chatroom.addChat('Hey Guys');
-
-chatroom.getChats((data) => {
-  console.log(data);
-});
 
 
-//now that this methode unsub us to the last room we need to set un a new listener
-setTimeout(() => {
-  chatroom.updateRoom('general');
-  chatroom.updateName('Maimu');
-  chatroom.getChats((data) => {
-    console.log(data);
-  });
-  chatroom.addChat('Hey Ngalla');
-}, 4000);

@@ -1,5 +1,10 @@
+body{
+  background:  rgb(247, 246, 246);
+}
+
 .container {
 max-width: 600px;
+
 }
 
 .btn {

@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../Asset/style.css">
+
+
+  <title>Real Time Chat</title>
+</head>
+
+<body>
+
+  <div class="container my-4">
+    <h1 class="my-4 text-center">Chat Room</h1>
+
+    <!-- button for chatrooms -->
+    <div class="chat-room mb-3 text-center">
+      <div class="my-2">Choose a chatroom</div>
+      <button class="btn" id="general">#general</button>
+      <button class="btn" id="gaming">#gaming</button>
+      <button class="btn" id="islam">#islam</button>
+      <button class="btn" id="coding">#coding</button>
+    </div>
+
+    <!-- chat list -->
+
+    <div class="chat-window">
+      <ul class="chat-list list-group"></ul>
+    </div>
+
+    <!-- new chat form -->
+
+    <form class="new-chat my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Your message:</div>
+        </div>
+        <input type="text" class="form-control" id="message" required>
+        <div class="class input-group-append">
+          <input type="submit" class="btn" value="send">
+        </div>
+
+      </div>
+    </form>
+
+    <!-- update name form -->
+    <form class="new-name my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Update name:</div>
+        </div>
+        <input type="text" class="form-control" id="name" required>
+        <div class="class input-group-append">
+          <input type="submit" class="btn" value="update">
+        </div>
+      </div>
+      <div class="update-mssg"> </div>
+    </form>
+
+  </div>
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDcZwkTJCNG79MMCPE3gef23EnApTmg31k",
+      authDomain: "friends-chat-room-5b8f2.firebaseapp.com",
+      databaseURL: "https://friends-chat-room-5b8f2.firebaseio.com",
+      projectId: "friends-chat-room-5b8f2",
+      storageBucket: "friends-chat-room-5b8f2.appspot.com",
+      messagingSenderId: "322631024875",
+      appId: "1:322631024875:web:a020c98407e9bb353efeae",
+      measurementId: "G-3X56TRFVM6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Every time we'll want to interacte with the firestore we will use the const "db"
+    const db = firebase.firestore();
+  </script>
+  <script src="../Scripts/chat.js"></script>
+  <script src="../Scripts/ui.js"></script>
+  <script src="../Scripts/app.js"></script>
+</body>
+
+</html>

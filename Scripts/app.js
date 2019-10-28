@@ -30,6 +30,21 @@ newNameForm.addEventListener('submit', e => {
   updateMssg.innerText = `Your name was updated to ${newName}`;
   setTimeout(() => updateMssg.innerText = '', 3000);
 });
+
+// Update the xhat room
+const room = document.querySelector('.chat-room');
+
+room.addEventListener('click', e => {
+  if (e.target.tagName === 'BUTTON') {
+    chatUi.clear();
+    chatroom.updateRoom(e.target.getAttribute('id'));
+    chatroom.getChats(chat => {
+      chatUi.render(chat);
+    });
+  }
+
+});
+
 //check localStorage for a name
 const username = localStorage.username ? localStorage.username : 'Anon';
 

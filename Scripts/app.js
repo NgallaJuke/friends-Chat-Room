@@ -13,9 +13,29 @@ newChatForm.addEventListener('submit', e => {
     })
     .catch(error => console.log(error));
 });
+
+
+// update userName 
+const newNameForm = document.querySelector('.new-name');
+const updateMssg = document.querySelector('.update-mssg');
+
+newNameForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const newName = newNameForm.name.value.trim();
+
+  chatroom.updateName(newName);
+  newNameForm.reset();
+
+  //show and hide tbe update message
+  updateMssg.innerText = `Your name was updated to ${newName}`;
+  setTimeout(() => updateMssg.innerText = '', 3000);
+});
+//check localStorage for a name
+const username = localStorage.username ? localStorage.username : 'Anon';
+
 // Class instance
 const chatUi = new ChatUI(chatList);
-const chatroom = new Chatroom('general', 'Ngalla');
+const chatroom = new Chatroom('general', username);
 
 /* get the chat and render */
 chatroom.getChats(data => chatUi.render(data));

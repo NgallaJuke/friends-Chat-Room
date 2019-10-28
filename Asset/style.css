@@ -26,3 +26,8 @@ max-width: 600px;
   font-size: 0.7em;
   color: #999999;
 }
+
+.update-mssg {
+  text-align: center;
+  margin: 20px auto;
+}
